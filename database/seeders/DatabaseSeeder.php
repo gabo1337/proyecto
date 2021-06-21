@@ -16,10 +16,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+            ProfileSeeder::class,
             #ForumSeeder::class,
             NewSeeder::class,
             GuideSeeder::class,
             DiscussionSeeder::class,
+            PostSeeder::class,
+            
         ]);
     }
 }

@@ -17,14 +17,11 @@ class NewSeeder extends Seeder
     public function run()
     {
 
-        $directorio = storage_path(). '/app/public/forums/';
     
         $forum = Forum::all(); 
         foreach($forum as $forums){
             $forum_id = $forums->id;
             $user_id = $forums->user_id;
-            
-            Storage::makeDirectory('public/forums/'. $forum_id. '/news/'. $user_id);
             \App\Models\News::factory(3)
             ->state([
                 "forum_id" => $forum_id,

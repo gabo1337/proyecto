@@ -13,6 +13,6 @@ class RolSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }
