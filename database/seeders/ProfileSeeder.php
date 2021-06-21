@@ -26,3 +26,5 @@ class ProfileSeeder extends Seeder
     }
   }
 }
+
+
