@@ -8,6 +8,7 @@ use App\Http\Controllers\guias;
 use App\Http\Controllers\guiaUnica;
 use App\Http\Controllers\foros;
 use App\Http\Controllers\foroUnico;
+use App\Http\Controllers\Python;
 use App\Http\Controllers\administradorController;
 
 /*
@@ -36,6 +37,8 @@ Route::get('/foros', [foros::class, 'index']);
 Route::get('/foroUnico', [foroUnico::class, 'index']);
 
 Route::get('/administrador', [administradorController::class, 'index']);
+
+Route::get('/prueba', [Python::class, 'index']);
 
 Auth::routes();
 

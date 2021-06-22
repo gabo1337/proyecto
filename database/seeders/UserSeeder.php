@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(1)
-        ->has(Forum::factory()->count(1))
+        User::factory(3)
+        ->has(Forum::factory()->count(3))
         ->create();
     }
 }
