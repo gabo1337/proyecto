@@ -26,11 +26,11 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async="" src="img/Index_files/js"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'G-XZ4W34ZJ0L');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-XZ4W34ZJ0L');
 	</script>
 
 </head>

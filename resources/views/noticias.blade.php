@@ -47,7 +47,7 @@ Main content START -->
 					<div class="row g-3">
 						<div class="col-lg-5">
 							<!-- Categories -->
-							<a href="" class="badge bg-primary mb-2"></i>PlayStation</a>
+							<a href="" class="badge bg-primary mb-2"></i>Noticia</a>
 							<!-- Title -->
 							<h2 class="card-title">
 								<a href="" class="btn-link text-reset stretched-link">{{$news->title}}</a>
@@ -61,7 +61,6 @@ Main content START -->
 									<h5 class="mb-1"><a href="" class="stretched-link text-reset btn-link">PostMyGames</a></h5>
 									<ul class="nav align-items-center small">
 										<li class="nav-item me-3">{{$news->created_at->toFormattedDateString()}}</li>
-										<li class="nav-item"></i>Hace 5 min</li>
 									</ul>
 								</div>
 							</div>
@@ -76,7 +75,9 @@ Main content START -->
 						</div>
 					</div>
 				</div>
+				
 				@endforeach
+				{{$new->links()}}
 				<!-- Card item END -->
 				<!-- Card item START -->
 				
@@ -86,6 +87,7 @@ Main content START -->
 		</div> <!-- Row end -->
 	</div>
 </section>
+
 <!-- =======================
 Main content END -->
 
@@ -100,4 +102,6 @@ Footer START -->
 
 <!-- Template Functions -->
 <script src="./Noticias_files/functions.js.descarga"></script>
+
+
 @endsection

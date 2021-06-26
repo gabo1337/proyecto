@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
+use App\Models\Forum;
+use App\Models\News;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Index');
+        $date = Carbon::now()->startofWeek();
+        $noticia = News::latest()->take(4)->get();
+
+        return view('Index',compact('noticia'));
+    }
+
+    public function buscar(Request $Request)
+    {
+        $buscador = $Request->get('search');
+        $foro=Forum::where('title','LIKE','%'.$buscador.'%')->get();
+        $noticia = News::where('title','LIKE','%'.$buscador.'%')->get();
+
+        return view('busqueda',compact('foro','noticia'));
     }
 }

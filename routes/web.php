@@ -23,18 +23,26 @@ use App\Http\Controllers\administradorController;
 */
 Route::get('/', [HomeController::class, 'index']);
 
-
+//noticia
 Route::get('/noticiaUnica', [noticiaUnica::class, 'index']);
-
 Route::get('/noticias', [noticias::class, 'index']);
+Route::get('/nuevanoticia', [noticias::class, 'show']);
+Route::post('/noticias/crear', [noticias::class, 'store']);
+//buscador
+Route::post('/buscar', [HomeController::class, 'buscar']);
 
+//foro
+Route::get('probar/{forums_id}', [foros::class, 'prueba']);
+//guias
 Route::get('/guias', [guias::class, 'index']);
-
 Route::get('/guiaUnica', [guiaUnica::class, 'index']);
 
+//crearforo
 Route::get('/foros', [foros::class, 'index']);
-
+Route::get('/nuevoforo', [foros::class, 'show']);
+Route::post('/foros/crear', [foros::class, 'store']);
 Route::get('/foroUnico', [foroUnico::class, 'index']);
+
 
 Route::get('/administrador', [administradorController::class, 'index']);
 

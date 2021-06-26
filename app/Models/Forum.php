@@ -26,7 +26,7 @@ class Forum extends Model
     }
     public function guides()
     {
-        return $this->hasMany('App\Models\Guides');
+        return $this->hasMany('App\Models\Guide');
     }
     public function news()
     {

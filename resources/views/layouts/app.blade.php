@@ -25,7 +25,8 @@
             <div class="container-fluid">
                 <div style="width: 100%; text-align:center" class="d-lg-none">
                     <a class="navbar-brand" href="{{ url('/') }}" style="widht:20%">
-                        <img src="img/Logo6.jpg" width="300px" height="80px" alt="Logo principal">
+                        <img src="{{asset('img/Logo6.jpg')}}" width="300px" height="80px" alt="Logo principal">
+                        
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,10 +34,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Ingrese su busqueda" aria-label="Search">
+
+                    <form class="d-flex" action="{{url('/buscar')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input class="form-control me-2" type="search" id="search" name="search" placeholder="Ingrese su busqueda" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit">Buscar</button>
                     </form>
+
                 </ul>
                 <a class="navbar-brand d-none d-lg-block" href="{{ url('/') }}" style="widht:20%">
                     <img src="img/Logo6.jpg" width="300px" height="80px" alt="Logo principal">
