@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\noticiaUnica;
 use App\Http\Controllers\noticias;
 use App\Http\Controllers\guias;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\guiaUnica;
 use App\Http\Controllers\foros;
 use App\Http\Controllers\foroUnico;
@@ -32,7 +33,10 @@ Route::post('/noticias/crear', [noticias::class, 'store']);
 Route::post('/buscar', [HomeController::class, 'buscar']);
 
 //foro
-Route::get('probar/{forums_id}', [foros::class, 'prueba']);
+Route::get('forounico/{id}', [foros::class, 'prueba']);
+Route::view('foroUnico/', 'foroUnico')->name('asd');
+
+
 //guias
 Route::get('/guias', [guias::class, 'index']);
 Route::get('/guiaUnica', [guiaUnica::class, 'index']);
@@ -41,12 +45,18 @@ Route::get('/guiaUnica', [guiaUnica::class, 'index']);
 Route::get('/foros', [foros::class, 'index']);
 Route::get('/nuevoforo', [foros::class, 'show']);
 Route::post('/foros/crear', [foros::class, 'store']);
-Route::get('/foroUnico', [foroUnico::class, 'index']);
 
 
+//usuario
+
+Route::get('usuario/{id}', [administradorController::class, 'eliminar']);
 Route::get('/administrador', [administradorController::class, 'index']);
+Route::get('users/{user}', [UserController::class, 'profile'])->name('user.profile');
+Route::post('/user/editar/{profile}', [UserController::class, 'edit']);
 
-Route::get('/prueba', [Python::class, 'index']);
+
+
+
 
 Auth::routes();
 
@@ -54,3 +64,5 @@ Route::get(
     '/home',
     [App\Http\Controllers\HomeController::class,
     'index'])-> name('home');
+
+

@@ -19,14 +19,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body >
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div style="width: 100%; text-align:center" class="d-lg-none">
                     <a class="navbar-brand" href="{{ url('/') }}" style="widht:20%">
-                        <img src="{{asset('img/Logo6.jpg')}}" width="300px" height="80px" alt="Logo principal">
-                        
+                        <img src="{{ url('img/Logo6.jpg') }}" width="300px" height="80px" alt="Logo principal">
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -34,16 +33,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-
                     <form class="d-flex" action="{{url('/buscar')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input class="form-control me-2" type="search" id="search" name="search" placeholder="Ingrese su busqueda" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit">Buscar</button>
                     </form>
-
                 </ul>
                 <a class="navbar-brand d-none d-lg-block" href="{{ url('/') }}" style="widht:20%">
-                    <img src="img/Logo6.jpg" width="300px" height="80px" alt="Logo principal">
+                    <img src="{{ url('img/Logo6.jpg') }}" width="300px" height="80px" alt="Logo principal">
                 </a>
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     @guest
@@ -70,6 +67,16 @@
                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                <a class="dropdown-item" href="{{ route('user.profile',Auth::user()) }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('user').submit();">
+                                        {{ __('Profile') }}
+                                    </a>
+
+                                    <form id="user" action="{{ route('user.profile', Auth::user()) }}" method="get" class="d-none">
+
+                                        @csrf
+                                    </form>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
@@ -86,16 +93,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ ('Principal') }}</a>
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Principal') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/foros/') }}">{{ ('Foros') }}</a>
+                            <a class="nav-link" href="{{ url('/foros/') }}">{{ __('Foros') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/guias/') }}">{{ ('Guias') }}</a>
+                            <a class="nav-link" href="{{ url('/guias/') }}">{{ __('Guias') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/noticias/') }}">{{ ('Noticias') }}</a>
+                            <a class="nav-link" href="{{ url('/noticias/') }}">{{ __('Noticias') }}</a>
                         </li>
                     @guest
                         @else
@@ -107,11 +114,28 @@
               </div>
             </div>
         </nav>
-        
-
         <main class="py-4">
             @yield('content')
         </main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div style="width: 100%; text-align:center" class="d-lg-none">
+                    <a class="navbar-brand" href="{{ url('/') }}" style="widht:20%">
+                        <img src="{{ url('img/Logo6.jpg') }}" width="300px" height="80px" alt="Logo principal">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand d-none d-lg-block" href="{{ url('/') }}" style="widht:20%">
+                    <img src="{{ url('img/Logo6.jpg') }}" width="300px" height="80px" alt="Logo principal">
+                </a>
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <h5 class="nav">{{ __('Diseño y Desarrollo de Software') }}</h5>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
     </div>
 </body>
 </html>

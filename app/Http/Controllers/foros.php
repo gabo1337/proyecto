@@ -60,15 +60,14 @@ class foros extends Controller
         ]);
 
     }
-    public function prueba($forums_id)
+    public function prueba($id)
     {
 
-        echo $forums_id;
-        $resultado = Forum::find($forums_id);
+        $resultado = Forum::find($id);
         $resultado->views = $resultado->views + 1;
         $resultado->save();
 
-       return view('forounico', ['forums' => $resultado],);
+       return view('foroUnico',['forums'=>$resultado]);
 
         
     }

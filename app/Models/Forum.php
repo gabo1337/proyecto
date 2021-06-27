@@ -22,7 +22,7 @@ class Forum extends Model
     }
     public function discussions()
     {
-        return $this->hasMany('App\Models\Discussions');
+        return $this->hasMany('App\Models\Discussion');
     }
     public function guides()
     {

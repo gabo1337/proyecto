@@ -9,6 +9,10 @@ use Carbon\Carbon;
 use App\Models\Forum;
 use App\Models\News;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Profile;
+use App\Models\Discussion;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -29,6 +33,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user_id = Auth::id();
+        $resultado = User::find($user_id);
+        if ($resultado->profile == '[]' )
+        {
+            $perfil = New Profile;
+            $perfil->profilephoto = 'profiles/photos/profile_photo/fotoperfil.png';
+            $perfil->coverpage = 'profiles/photos/covers/cover.png';
+            $perfil->Colour1 = '#54259a';
+            $perfil->Colour2 = '#54259a';
+            $perfil->description = 'funciona  :D';
+            $resultado->profile()->save($perfil);   
+        }
+
         $date = Carbon::now()->startofWeek();
         $noticia = News::latest()->take(4)->get();
 
@@ -40,7 +57,11 @@ class HomeController extends Controller
         $buscador = $Request->get('search');
         $foro=Forum::where('title','LIKE','%'.$buscador.'%')->get();
         $noticia = News::where('title','LIKE','%'.$buscador.'%')->get();
+        $post = Post::where('title','LIKE','%'.$buscador.'%')->get();
+        $discucion = Discussion::where('title','LIKE','%'.$buscador.'%')->get();
+        $user = User::all();
+        $profile = Profile::all();
 
-        return view('busqueda',compact('foro','noticia'));
+        return view('buscadorproyecto',compact('foro','noticia','post','discucion','user','profile'));
     }
 }

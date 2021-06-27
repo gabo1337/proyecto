@@ -14,4 +14,14 @@ class administradorController extends Controller
         return view('administrador',compact('user'));
     }
 
+
+    public function eliminar($id)
+    {
+
+     User::find($id)->delete();
+     return view('administrador');
+
+    }
+
+
 }

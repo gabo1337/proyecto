@@ -7,7 +7,6 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 class Rol extends Model
 {
-    use HasFactory;
 
     use HasFactory;
     protected $fillable = [

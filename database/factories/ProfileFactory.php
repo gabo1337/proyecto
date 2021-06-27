@@ -27,7 +27,7 @@ class ProfileFactory extends Factory
         Storage::makeDirectory('public/profiles/photos/covers');
 
         return [
-            'profilephoto'=> 'profiles/photos/profile_photo/' . $this->faker->image($directorio."/profile_photo", 100, 100, null, false), 
+            'profilephoto'=> 'profiles/photos/profile_photo/fotoperfil.png', 
             'coverpage'=>'profiles/photos/covers/' . $this->faker->image($directorio . "/covers", 500, 700, null, false), 
             'Colour1'=>$this->faker->hexcolor(),
             'Colour2'=>$this->faker->hexcolor(),

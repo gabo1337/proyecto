@@ -43,7 +43,7 @@
 						</div>
 						<div class="col-md-7 mt-3 mt-md-0">
 							<a class="badge bg-danger mb-2" ><i class="fas fa-circle me-2 small fw-bold"></i>Foros</a>
-							<h3><a class="btn-link stretched-link text-reset" href="{{url('probar/'.$forums->id)}}">	{{$forums->title}}</a></h3>
+							<h3><a class="btn-link stretched-link text-reset" href="{{url('forounico/'.$forums->id)}}">	{{$forums->title}}</a></h3>
 						    
 							<p>{{$forums->content}}</p>
 							<!-- Card info -->
@@ -66,7 +66,7 @@
 
 											@foreach ($user as $users)
 											@if ($users->id == $forums->user_id)
-											<span class="ms-3">by <a class="stretched-link text-reset btn-link" >{{$users->name}}</a></span>
+											<span class="ms-3">by <a href="{{url('users/'.$users->id)}}" class="stretched-link text-reset btn-link" >{{$users->name}}</a></span>
 											@endif
 											@endforeach
 										</div>
