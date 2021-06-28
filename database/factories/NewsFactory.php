@@ -31,7 +31,7 @@ class NewsFactory extends Factory
 
         return [
             'title' => $this->faker->sentence(5),
-            'image' => 'News/'. $this->faker->image($directorio , 400, 300, null, false),
+            'image' => 'News/logo.jpeg',
             'content' => $this->faker->paragraph(3),
             ];
         }      

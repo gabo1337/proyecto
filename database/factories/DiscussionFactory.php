@@ -30,7 +30,7 @@ class DiscussionFactory extends Factory
 
         return [
             'title' => $this->faker->sentence(5),
-            'image' => 'Discussion/'. $this->faker->image($directorio , 400, 300, null, false),
+            'image' => 'Discussion/logo.jpeg',
             'content' => $this->faker->paragraph(3),
             ];
         }  

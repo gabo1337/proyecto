@@ -18,7 +18,7 @@
 							<!-- Card category -->
 							<a href="" class="badge bg-info mb-2"></i>PlayStation</a>
 							<!-- Card title -->
-							<h2 class="text-white h1"><a href="" class="btn-link stretched-link text-reset">{{$noticia[0]->title}}</a></h2>
+							<h2 class="text-white h1"><a href="{{url('noticiaUnica/'.$noticia[0]->id)}}" class="btn-link stretched-link text-reset">{{$noticia[0]->title}}</a></h2>
 							<p class="text-white">{{$noticia[0]->content}}</p>
 							<!-- Card info -->
 							<ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
@@ -53,7 +53,7 @@
 									<!-- Card category -->
 									<a href="" class="badge bg-success mb-2"></i>XBOX</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="" class="btn-link stretched-link text-reset">{{$noticia[1]->title}}</a></h4>
+									<h4 class="text-white"><a href="{{url('noticiaUnica/'.$noticia[1]->id)}}" class="btn-link stretched-link text-reset">{{$noticia[1]->title}}</a></h4>
 									<!-- Card info -->
 									<ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
 										<li class="nav-item position-relative">
@@ -76,7 +76,7 @@
 									<!-- Card category -->
 									<a href="" class="badge bg-danger mb-2"></i>Nintendo</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="" class="btn-link stretched-link text-reset">{{$noticia[2]->title}}</a></h4>
+									<h4 class="text-white"><a href="{{url('noticiaUnica/'.$noticia[2]->id)}}" class="btn-link stretched-link text-reset">{{$noticia[2]->title}}</a></h4>
 									<!-- Card info -->
 									<ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
 										<li class="nav-item position-relative">
@@ -99,7 +99,7 @@
 									<!-- Card category -->
 									<a href="" class="badge bg-warning mb-2"></i>Windows</a>
 									<!-- Card title -->
-									<h4 class="text-white"><a href="" class="btn-link stretched-link text-reset">{{$noticia[3]->title}}</a></h4>
+									<h4 class="text-white"><a href="{{url('noticiaUnica/'.$noticia[3]->id)}}" class="btn-link stretched-link text-reset">{{$noticia[3]->title}}</a></h4>
 									<!-- Card info -->
 									<ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
 										<li class="nav-item position-relative">

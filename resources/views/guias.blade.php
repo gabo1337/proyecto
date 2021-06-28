@@ -24,13 +24,13 @@ Inner intro START -->
 							<div class="text-white mb-3">
 								<h2 class="text-white display-5">Las mejores guias de videojuegos</h2>
 							</div>
-          </div>
+          	</div>
         </div>
       </div>
     </div>
 	</div>
 </section>
-<!-- =======================
+
 <!-- =======================
 Main content START -->
 <section class="position-relative pt-0">
@@ -51,8 +51,8 @@ Main content START -->
 								</div>
 							</div>
 							<div class="card-body px-0 pt-3">
-								<h4 class="card-title"><a href="post-single-2.html" class="btn-link text-reset fw-bold">{{$guias->title}}</a></h4>
-								<p class="card-text">For who thoroughly her boy estimating conviction. Removed demands expense account in outward tedious do. Particular way thoroughly unaffected</p>
+								<h4 class="card-title"><a href="{{url('guiaUnica/'.$guias->id)}}" class="btn-link text-reset fw-bold">{{$guias->title}}</a></h4>
+								<p class="card-text">{{$guias->content}}</p>
 								<!-- Card info -->
 								<ul class="nav nav-divider align-items-center d-none d-sm-inline-block">
 									<li class="nav-item">

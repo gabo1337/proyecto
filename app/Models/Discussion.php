@@ -15,7 +15,7 @@ class Discussion extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
-    public function forums()
+    public function forum()
     {
         return $this->belongsTo('App\Models\Forum');
     }

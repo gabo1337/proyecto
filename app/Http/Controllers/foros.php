@@ -34,7 +34,7 @@ class foros extends Controller
         ]);
 
         $imageNombre = $Request->file('image')->store(
-            'forums/Images_forum/','public'
+            'forums/Images_forum/fondo','public'
 
         );
 
@@ -60,12 +60,33 @@ class foros extends Controller
         ]);
 
     }
+    public function eliminar($foro)
+    {
+
+        if (auth()->user()->Rol == 'admin'){
+            $foro = Forum::find($foro);
+            $foro->delete();
+            return redirect('/foros');
+        }
+        else {
+            $foro = Forum::find($foro);
+            echo $foro;
+            $foro->delete();
+            return redirect('/foros');
+        }
+
+        
+
+        
+    }
     public function prueba($id)
     {
 
         $resultado = Forum::find($id);
         $resultado->views = $resultado->views + 1;
         $resultado->save();
+
+        
 
        return view('foroUnico',['forums'=>$resultado]);
 

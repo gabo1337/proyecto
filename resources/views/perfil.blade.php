@@ -9,7 +9,6 @@
     <meta name="keywords" content="portfolio">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>home page 1</title>
     <link rel="stylesheet" href="{{asset('css/nicepage.css')}}" media="screen">
 <link rel="stylesheet" href="{{asset('css/home-page-1.css')}}" media="screen">
     <script class="u-script" type="text/javascript" src="{{asset('js/jquery-1.9.1.min.js')}}" defer=""></script>
@@ -21,34 +20,35 @@
         min-height: 678px;
         background-image: url("{{asset('storage/'.$user->profile[0]->profilephoto)}}");
         background-position: 50% 50%;
+        
       }
       .u-palette-3-base, .u-body.u-palette-3-base, .u-container-style.u-palette-3-base:before, .u-table-alt-palette-3-base tr:nth-child(even) {
     color: #111111;
-    background-color: #50d136;
+    background-image: url("{{asset('storage/'.$user->profile[0]->coverpage)}}");
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+}
+.u-palette-1-base, .u-body.u-palette-1-base, .u-container-style.u-palette-1-base:before, .u-table-alt-palette-1-base tr:nth-child(even) {
+    color: #ffffff;
+    background-color: {{$user->profile[0]->Colour1}}
 }
 
 .u-palette-1-dark-2, .u-body.u-palette-1-dark-2, .u-container-style.u-palette-1-dark-2:before, .u-table-alt-palette-1-dark-2 tr:nth-child(even) {
     color: #ffffff;
-    background-color: #9b9cb8;
+    background-color:{{$user->profile[0]->Colour2}};
 }
 </style>
     
     
     
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/Untitled-2.png"
-}</script>
+    
     <meta name="theme-color" content="#1f203a">
     <meta property="og:title" content="home page 1">
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="https://website479142.nicepage.io/home-page-1.html?version=1b888f42-8fc1-430c-b5a9-474964b75eff" data-home-page-title="home page 1" class="u-body"><header class="u-clearfix u-header u-palette-1-base u-header" id="sec-ab9d"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/Untitled-2.png" class="u-logo-image u-logo-image-1" data-image-width="64">
-        </a>
+        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="XL">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
             <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="#">
@@ -77,7 +77,7 @@
       
           
       
-    <section class="u-align-left u-clearfix u-palette-1-base u-valign-top-xl u-section-1" id="carousel_2505">
+    <section class="u-align-left  u-clearfix u-palette-1-base u-valign-top-xl u-section-1" id="carousel_2505">
       <div class="u-expanded-width u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
@@ -103,87 +103,56 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
           <div class="u-gallery-inner u-gallery-inner-1">
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/logo-mockup-black-facade-sign_145275-281.jpg">
-              </div>
+          @foreach ($user->posts as $post)
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide">
+                  <img class="u-back-image u-expanded" src="{{asset('storage/'.$post->image)}}">
+                </div>
               <div class="u-over-slide u-shading u-over-slide-1">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
+                  <h2 class="u-gallery-heading">{{$post->title}}</h2>
+                  <p class="u-gallery-text">{{$post->content}}</p>
+                  <p class="u-gallery-text" style="text-align:center"><a href="{{url('/postUnica/'. $post->id)}}">Ver mas</a></p>
+                </div>
               </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/business-cards-mockup_1389-1137.jpg">
+          @endforeach
+          @foreach ($user->news as $new)
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide">
+                  <img class="u-back-image u-expanded" src="{{asset('storage/'.$new->image)}}">
+                </div>
+              <div class="u-over-slide u-shading u-over-slide-1">
+                  <h2 class="u-gallery-heading">{{$new->title}}</h2>
+                  <p class="u-gallery-text">{{$new->content}}</p>
+                  <p class="u-gallery-text" style="text-align:center"><a href="{{url('/noticiaUnica/'. $new->id)}}">Ver mas</a></p>
+                </div>
               </div>
-              <div class="u-over-slide u-shading u-over-slide-2">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
+          @endforeach
+          @foreach ($user->guides as $guide)
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide">
+                  <img class="u-back-image u-expanded" src="{{asset('storage/'.$guide->image)}}">
+                </div>
+              <div class="u-over-slide u-shading u-over-slide-1">
+                  <h2 class="u-gallery-heading">{{$guide->title}}</h2>
+                  <p class="u-gallery-text">{{$guide->content}}</p>
+                  <p class="u-gallery-text" style="text-align:center"><a href="{{url('/guiaUnica/'. $guide->id)}}">Ver mas</a></p>
+                </div>
               </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/3d-logo-mockup_145275-141.jpg">
+          @endforeach
+          @foreach ($user->discussions as $discussion)
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide">
+                  <img class="u-back-image u-expanded" src="{{asset('storage/'.$discussion->image)}}">
+                </div>
+              <div class="u-over-slide u-shading u-over-slide-1">
+                  <h2 class="u-gallery-heading">{{$discussion->title}}</h2>
+                  <p class="u-gallery-text">{{$discussion->content}}</p>
+                  <a href="{{url('/noticiaUnica/'. $discussion->id)}}"><p class="u-gallery-link" style="text-align:center">Ver mas</p></a>
+                </div>
               </div>
-              <div class="u-over-slide u-shading u-over-slide-3">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1199" data-image-height="800">
-                <img class="u-back-image u-expanded" src="images/yh-min.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-4">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/rr.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-5">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/black-screen-smartphone-mockup-design_53876-65977.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-6">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/elegant-minimal-black-yellow-business-card-template_1017-22513.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-7">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1500" data-image-height="1213">
-                <img class="u-back-image u-expanded" src="images/re.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-8">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-              <div class="u-back-slide" data-image-width="1000" data-image-height="919">
-                <img class="u-back-image u-expanded" src="images/a9dcc2d3-077b-4cbf-35f1-05a7ca2b6438.jpg">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-9">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
+          @endforeach
+            
+      
           </div>
         </div>
         
@@ -229,7 +198,6 @@
           </div>
 					<div class="form-group">
 						<label>Foto Portada</label>
-            <label>Foto de perfil</label>
             <div class="form-group">
               <div class="col-sm-12">
                   <div class="custom-file">
@@ -248,6 +216,15 @@
 					<div class="form-group">
 						<label>description</label>
 						<textarea class="form-control" id="content" name="content" required></textarea>
+					</div>
+          <div class="form-group">
+						<label for="exampleColorInput" class="form-label">Color picker</label>
+            <input type="color" class="form-control form-control-color" id="Color1" name="Color1" value="#563d7c" title="Choose your color" required>
+					</div>
+
+          <div class="form-group">
+						<label for="exampleColorInput" class="form-label">Color picker</label>
+            <input type="color" class="form-control form-control-color" id="Color2" name="Color2" value="#563d7c" title="Choose your color" required>
 					</div>
 										
 				</div>

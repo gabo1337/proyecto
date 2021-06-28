@@ -15,6 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="https://blogzine.webestica.com/assets/images/favicon.ico">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -104,12 +106,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/noticias/') }}">{{ __('Noticias') }}</a>
                         </li>
-                    @guest
-                        @else
+                        @auth
+                            
+                        
+                        @if (auth()->user()->Rol == 'admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/administrador/') }}">{{ __('Administrador') }}</a>
                             </li>
-                        @endguest
+                        @endif
+
+                        @endauth
                 </ul>
               </div>
             </div>

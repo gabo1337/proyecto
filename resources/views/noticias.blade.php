@@ -50,7 +50,7 @@ Main content START -->
 							<a href="" class="badge bg-primary mb-2"></i>Noticia</a>
 							<!-- Title -->
 							<h2 class="card-title">
-								<a href="" class="btn-link text-reset stretched-link">{{$news->title}}</a>
+								<a href="{{url('noticiaUnica/'.$news->id)}}" class="btn-link text-reset stretched-link">{{$news->title}}</a>
 							</h2>
 							<!-- Author info -->
 							<div class="d-flex align-items-center position-relative mt-3">

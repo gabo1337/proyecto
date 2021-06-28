@@ -31,7 +31,7 @@ class GuideFactory extends Factory
 
         return [
             'title' => $this->faker->sentence(5),
-            'image' => 'Guides/'. $this->faker->image($directorio , 400, 300, null, false),
+            'image' => 'Guides/logo.jpeg',
             'content' => $this->faker->paragraph(3),
             ];
         }

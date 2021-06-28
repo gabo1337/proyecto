@@ -28,9 +28,9 @@ class ForumFactory extends Factory
 
         return [
             'title' => $this->faker->sentence(5),
-            'image' => 'forums/Images_forum/' . $this->faker->image($directorio, 400, 300, null, false),
+            'image' => 'forums/Images_forum/logo.jpeg',
             'content' => $this->faker->paragraph(3),
-            'icon' => 'forums/Images_forum/Icon/' . $this->faker->image($directorio.'/Icon', 400, 300, null, false),
+            'icon' => 'forums/Images_forum/Icon/logo.jpeg',
             'color1' => $this->faker->hexcolor(),
             'color2' => $this->faker->hexcolor(),
             'views' => $this->faker->randomNumber($nbDigits = NULL, $strict = false),

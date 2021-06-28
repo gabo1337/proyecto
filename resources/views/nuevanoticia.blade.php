@@ -37,15 +37,6 @@
                      </div>
                   </div>
 
-
-
-                  
-
-
-
-
-                  
-
                   <div class="form-group">
                       <label for="content" class="col-sm-12 col-form-label">{{__('Content')}}</label>
                       <div class="col-sm-12">
@@ -57,7 +48,6 @@
                              @endif
                       </div>
                   </div>
-
 
                   <div class="form-group">
                       <div class="col-sm-12">
@@ -75,15 +65,6 @@
                       </div>
 
                   </div>
-
-
-
-
-
-
-                 
-
-                   
 
                </div>
                   <div class="form-group">

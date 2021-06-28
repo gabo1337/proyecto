@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\User;
+use App\Models\Forum;
+
 
 class noticias extends Controller
 {
@@ -16,10 +18,10 @@ class noticias extends Controller
 
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('nuevanoticia');
-
+        $new = News::find($id);
+        return view('vistaUnicaNoticias',['noticia'=>$new]);
     }
 
     public function store(Request $Request)
@@ -34,14 +36,18 @@ class noticias extends Controller
             'News/','public'
 
         );
-        $title = $Request->get('title');
-        $content = $Request->get('content');
+
+        $user = User::find($Request->user()->id);
+
+        $noticia = new News();
+        $noticia->title = $Request->get('title');;
+        $noticia->content = $Request->get('content');
+        $noticia->forum_id = $Request->get('id');
+        $noticia->image = $imageNombre;
+        $noticia = $user->news()->save($noticia);
         
-        $foro = $Request->user()->News()->create([
-            'title' => $title,
-            'image' => $imageNombre,
-            'content' => $content,
-        ]);
+        return redirect()->route('noticia', ['id' => $noticia->id]);
+
 
     }
 

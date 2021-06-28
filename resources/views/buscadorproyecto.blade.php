@@ -50,7 +50,7 @@ contenedor -->
 							<a href="" class="badge bg-primary mb-2"></i>Noticia</a>
 							<!-- Title -->
 							<h2 class="card-title">
-								<a href="" class="btn-link text-reset stretched-link">{{$noticias->title}}</a>
+								<a href="{{url('noticiaUnica/'.$noticias->id)}}" class="btn-link text-reset stretched-link">{{$noticias->title}}</a>
 							</h2>
 							<!-- Author info -->
 							<div class="d-flex align-items-center position-relative mt-3">
@@ -102,7 +102,7 @@ contenedor -->
 							<a href="" class="badge bg-primary mb-2"></i>Foro</a>
 							<!-- Title -->
 							<h2 class="card-title">
-								<a href="{{url('probar/'.$foros->id)}}" class="btn-link text-reset stretched-link">{{$foros->title}}</a>
+								<a href="{{url('forounico/'.$foros->id)}}" class="btn-link text-reset stretched-link">{{$foros->title}}</a>
 							</h2>
 							<!-- Author info -->
 							<div class="d-flex align-items-center position-relative mt-3">
@@ -167,7 +167,7 @@ contenedor -->
 							<a href="" class="badge bg-primary mb-2"></i>Noticia</a>
 							<!-- Title -->
 							<h2 class="card-title">
-								<a href="" class="btn-link text-reset stretched-link">{{$posts->title}}</a>
+								<a href="{{url('postUnica/'.$posts->id)}}" class="btn-link text-reset stretched-link">{{$posts->title}}</a>
 							</h2>
 							<!-- Author info -->
 							<div class="d-flex align-items-center position-relative mt-3">
@@ -241,7 +241,7 @@ contenedor -->
 							<a href="" class="badge bg-primary mb-2"></i>Noticia</a>
 							<!-- Title -->
 							<h2 class="card-title">
-								<a href="" class="btn-link text-reset stretched-link">{{$discuciones->title}}</a>
+								<a href="{{url('discucionUnica/'.$discuciones->id)}}" class="btn-link text-reset stretched-link">{{$discuciones->title}}</a>
 							</h2>
 							<!-- Author info -->
 							<div class="d-flex align-items-center position-relative mt-3">

@@ -19,4 +19,8 @@ class Guide extends Model
     {
         return $this->belongsTo('App\Models\Forum');
     }
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

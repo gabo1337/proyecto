@@ -20,5 +20,15 @@ class UserSeeder extends Seeder
         User::factory(3)
         ->has(Forum::factory()->count(3))
         ->create();
+
+
+        User::factory(1)
+        ->state([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'Rol' => 'admin',
+        ])
+        ->create();
     }
 }
+

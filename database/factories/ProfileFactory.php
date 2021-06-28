@@ -28,7 +28,7 @@ class ProfileFactory extends Factory
 
         return [
             'profilephoto'=> 'profiles/photos/profile_photo/fotoperfil.png', 
-            'coverpage'=>'profiles/photos/covers/' . $this->faker->image($directorio . "/covers", 500, 700, null, false), 
+            'coverpage'=>'profiles/photos/covers/cover.jpeg', 
             'Colour1'=>$this->faker->hexcolor(),
             'Colour2'=>$this->faker->hexcolor(),
             'description'=>$this->faker->paragraph(3),
