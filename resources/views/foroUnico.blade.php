@@ -26,6 +26,9 @@
 	<!-- Theme CSS -->
 	<link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
+    <!-- Theme CSS -->
+<link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('img/Busqueda_files/style.css') }}">
+
 <style></style><style type="text/css">
 @font-face {
   font-weight: 400;
@@ -66,6 +69,9 @@
 
 <!-- =======================
 Inner intro START -->
+
+
+
 <section class="bg-dark-overlay-4" style="background-image:url({{Storage::url($forums->image)}}); background-position: center left; background-size: cover;">
 	<div class="container">
 		<div class="row">
@@ -106,8 +112,12 @@ Inner intro START -->
 
 	</div>
 </section>
+</div>
+</div>
 <!-- =======================
 Inner intro END -->
+
+
 
 <!-- =======================
 Main START -->
@@ -148,7 +158,17 @@ Main START -->
                                     </h2>
 									<p>Las mejores noticias</p>
 								</div>
+                                <!-- =======================
+contenedor -->
+<center><h2>Noticias</h2></center>
+
+<div class="card ">
+
+<div class="contenedorscroll">
+<!-- =======================
+contenedor -->   
 								<div class="row gy-4">
+ 
 									<!-- Card item START -->
                                     @forelse ($forums->news as $new)
 									<div class="col-sm-6">
@@ -191,7 +211,8 @@ Main START -->
 								</div>
 							</div>
 							<!-- Main Post END -->
-							
+    </div>
+    </div>
 						</div> <!-- Row end -->
 					</div>
 				</section>
@@ -285,6 +306,14 @@ Main START -->
 									<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Posts<a href="#post" class="btn btn-primary btn-lg" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="agregar">Nuevo</i></a></h2>
 									<p>Foros dedicados al gaming pa pa </p>
 								</div>
+                              
+         <!-- =======================
+contenedor -->
+<div class="card ">
+
+<div class="contenedorscroll">
+<!-- =======================
+contenedor --> 
 								<div class="row gy-4">
 									<!-- Card item START -->
                                     @forelse ($forums->posts as $post)
@@ -326,7 +355,9 @@ Main START -->
                                     @endforelse
 									
 									
-									
+                                
+</div>
+</div>									
 								</div>
 							</div>
 							<!-- Main Post END -->
@@ -334,7 +365,8 @@ Main START -->
 						</div> <!-- Row end -->
 					</div>
 				</section>
-
+</div>
+</div>
 
 
 
@@ -416,6 +448,13 @@ Main START -->
 									<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Guias<a href="#guias" class="btn btn-primary btn-lg" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">Nuevo</i></a></h2>
 									<p>Latest breaking news, pictures, videos, and special reports</p>
 								</div>
+                              
+
+<div class="card ">
+
+<div class="contenedorscroll">
+<!-- =======================
+contenedor --> 
 								<div class="row gy-4">
                                     @forelse ($forums->guides as $guide)
 									<!-- Card item START -->
@@ -456,7 +495,9 @@ Main START -->
                                     @empty
                                     @endforelse
 									
-									
+                                 
+</div>
+</div>									
 								</div>
 							</div>
 							<!-- Main Post END -->
@@ -464,7 +505,8 @@ Main START -->
 						</div> <!-- Row end -->
 					</div>
 				</section>
-
+</div>
+</div>
                 <section>
                     <!-- Edit Modal HTML -->
                     <div id="addEmployeeModal" class="modal fade">
@@ -550,6 +592,13 @@ Main START -->
 									<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Discuciones<a href="#Discuciones" class="btn btn-primary btn-lg" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">Nuevo</i></a></h2>
 									<p>Latest breaking news, pictures, videos, and special reports</p>
 								</div>
+                             
+
+<div class="card ">
+
+<div class="contenedorscroll">
+<!-- =======================
+contenedor --> 
 								<div class="row gy-4">
                                     @forelse ($forums->discussions as $discussion)
 									<!-- Card item START -->
@@ -593,7 +642,9 @@ Main START -->
 									
 									
 									<!-- Card item END -->
-									
+                                  
+</div>
+</div>									
 									
 								</div>
 							</div>
@@ -609,7 +660,8 @@ Main START -->
 		</div>
 	</div>
 </section>
-
+</div>
+</Div>
 
 <section>
     <!-- Edit Modal HTML -->

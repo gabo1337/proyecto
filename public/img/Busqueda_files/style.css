@@ -32,9 +32,10 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 .contenedorscroll {
-  height: 400px;
+  
+  height: 800px;
   overflow-y: scroll;
-  width: 800px;
+  width: 1500px;
 }
 *,
 *::before,
